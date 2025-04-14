@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+         html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            background-color: #424242; /* Optional background */
+
+        }
+
+        #container {
+            width: 50%;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #textbox{
+            width: 50%;
+            height: 30px;
+            margin: 10px 0;
+        }
+
+        #measure{
+            width: 50%;
+            height: 30px;
+            margin: 10px 0;
+        }
+
+        #measureConvert{
+            width: 50%;
+            height: 30px;
+            margin: 10px 0;
+        }
+
+        button{
+            width: 50%;
+            height: 30px;
+            margin: 10px 0;
+        }
+
+        #result {
+            width: 55%;
+            height: 30px;
+            margin: 10px auto; /* Centers the box horizontally */
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: solid 1px #000;
+            display: flex;
+            justify-content: center; /* Centers text inside */
+            align-items: center; /* Centers text inside */
+        }
+
+    </style>
+<body>
+    <div id="container">    
+        <h1>Converter</h1>
+        <input type="number" id="textbox" value="0">
+        <div id="result"></div>
+        <select name="physicalMeasurements" id="measure">
+            <optgroup label="Length/Distance">
+                <option value="meters">Meters (m)</option>
+                <option value="centimeters">Centimeters (cm)</option>
+                <option value="kilometers">Kilometers (km)</option>
+            </optgroup>
+            
+            <optgroup label="Mass/Weight">
+                <option value="grams">Grams (g)</option>
+                <option value="kilograms">Kilograms (kg)</option>
+                <option value="pounds">Pounds (lb)</option>
+            </optgroup>
+        
+            <optgroup label="Time">
+                <option value="seconds">Seconds (s)</option>
+                <option value="minutes">Minutes (min)</option>
+                <option value="hours">Hours (h)</option>
+            </optgroup>
+
+            <optgroup label="Temperature">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin (K)</option>
+            </optgroup>
+
+            <optgroup label="Volume">
+                <option value="liters">Liters (L)</option>
+                <option value="milliliters">Milliliters (mL)</option>
+                <option value="gallons">Gallons (gal)</option>
+            </optgroup>
+
+            <optgroup label="Area">
+                <option value="squaremeters">Square Meters (m²)</option>
+                <option value="squarecentimeters">Square Centimeters (cm²)</option>
+                <option value="squarekilometers">Square Kilometers (km²)</option>
+            </optgroup>
+
+            <optgroup label="Speed/Velocity">
+                <option value="Meterspersecond">Meters per second (m/s)</option>
+                <option value="kilometer perhour">kilometers per hour (km/h)</option>
+                <option value="milesperhour">miles per hour (mph)</option>
+            </optgroup>
+
+            <optgroup label="Pressure">
+                <option value="pascal">Pascal (Pa)</option>
+                <option value="atmosphere">Atmosphere (atm)</option>
+                <option value="bar">Bar (bar)</option>
+            </optgroup>
+
+            <optgroup label="Force">
+                <option value="newton">Newton (N)</option>
+                <option value="dyne">Dyne (dyn)</option>
+                <option value="poundforce">Pound-force (lbf)</option>
+            </optgroup>
+
+            <optgroup label="Energy">
+                <option value="joule">Joule (J)</option>
+                <option value="calorie">Calorie (cal)</option>
+                <option value="kilowatthour">Kilowatt-hour (kWh)</option>
+            </optgroup>
+
+            <optgroup label="Power">
+                <option value="watt">Watt (W)</option>
+                <option value="horsepower">Horsepower (hp)</option>
+                <option value="kilowatt">Kilowatt (kW)</option>
+            </optgroup>
+
+        </select>
+        
+        <select name="physicalMeasurements" id="measureConvert">
+            <optgroup label="Length/Distance">
+                <option value="meters">Meters (m)</option>
+                <option value="centimeters">Centimeters (cm)</option>
+                <option value="kilometers">Kilometers (km)</option>
+            </optgroup>
+            
+            <optgroup label="Mass/Weight">
+                <option value="grams">Grams (g)</option>
+                <option value="kilograms">Kilograms (kg)</option>
+                <option value="pounds">Pounds (lb)</option>
+            </optgroup>
+        
+            <optgroup label="Time">
+                <option value="seconds">Seconds (s)</option>
+                <option value="minutes">Minutes (min)</option>
+                <option value="hours">Hours (h)</option>
+            </optgroup>
+
+            <optgroup label="Temperature">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin (K)</option>
+            </optgroup>
+
+            <optgroup label="Volume">
+                <option value="liters">Liters (L)</option>
+                <option value="milliliters">Milliliters (mL)</option>
+                <option value="gallons">Gallons (gal)</option>
+            </optgroup>
+
+            <optgroup label="Area">
+                <option value="squaremeters">Square Meters (m²)</option>
+                <option value="squarecentimeters">Square Centimeters (cm²)</option>
+                <option value="squarekilometers">Square Kilometers (km²)</option>
+            </optgroup>
+
+            <optgroup label="Speed/Velocity">
+                <option value="Meterspersecond">Meters per second (m/s)</option>
+                <option value="kilometer perhour">kilometers per hour (km/h)</option>
+                <option value="milesperhour">miles per hour (mph)</option>
+            </optgroup>
+
+            <optgroup label="Pressure">
+                <option value="pascal">Pascal (Pa)</option>
+                <option value="atmosphere">Atmosphere (atm)</option>
+                <option value="bar">Bar (bar)</option>
+            </optgroup>
+
+            <optgroup label="Force">
+                <option value="newton">Newton (N)</option>
+                <option value="dyne">Dyne (dyn)</option>
+                <option value="poundforce">Pound-force (lbf)</option>
+            </optgroup>
+
+            <optgroup label="Energy">
+                <option value="joule">Joule (J)</option>
+                <option value="calorie">Calorie (cal)</option>
+                <option value="kilowatthour">Kilowatt-hour (kWh)</option>
+            </optgroup>
+
+            <optgroup label="Power">
+                <option value="watt">Watt (W)</option>
+                <option value="horsepower">Horsepower (hp)</option>
+                <option value="kilowatt">Kilowatt (kW)</option>
+            </optgroup>
+            
+        </select>
+        
+        <button type="button" onclick="convert()">Click</button>
+    </div>
+</body>
+    <script src="Converter.js"></script>
+</html>
